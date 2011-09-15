@@ -55,9 +55,7 @@ public class TypeAheadOracle extends SuggestOracle {
 
 								if (l.size() < req.getLimit()) {
 									l.add(new DestinationSuggestion(destination));
-									// System.out.println(i + ": " +
-									// result.getDestinations().get(i).getName()
-									// + " is the name");
+							
 								}
 							}
 

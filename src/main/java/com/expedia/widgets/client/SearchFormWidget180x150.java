@@ -56,7 +56,7 @@ public class SearchFormWidget180x150 extends Composite {
 	VerticalPanel hotelPanel = new VerticalPanel();
 	TypeAheadOracle oracle = new TypeAheadOracle();
 	TypeAheadOracle oracle2 = new TypeAheadOracle();
-	SuggestBox destination = new SuggestBox(oracle);
+	LocationDestinationSuggestion destination; 
 	SuggestBox airportFrom = new SuggestBox(oracle2);
 	RadioButton hotels = new RadioButton(GROUP);
 	RadioButton flights = new RadioButton(GROUP);
@@ -67,16 +67,17 @@ public class SearchFormWidget180x150 extends Composite {
 					Window.Location.getParameterMap());
 			oracle.setAllExcludingAddress();
 			oracle2.setAllExcludingAddress();
-
+			destination = new LocationDestinationSuggestion(LineOfBusinessConfiguration.getSearchFormConstants().Destination(), LineOfBusinessConfiguration.isCustomSearchLocation());
+			 
 			panel.setPixelSize(config.getWidth(), config.getHeight());
 			panel.add(new Image(resources.canvas180x150()));
 			panel.add(getLineOfBusinessSelection(), 14, 36);
 
 			destination.setWidth(HOTEL_WIDTH);
 			if (config.getDefaultSearch().length() > 0) {
-				destination.setText(config.getDefaultSearch());
+				destination.setDestinationValue(config.getDefaultSearch());
 			} else {
-				destination.setText(HOTEL_TEXT);
+				destination.setDestinationValue(HOTEL_TEXT);
 			}
 			StyleInjector.inject(resources.myCss().getText());
 
@@ -85,7 +86,7 @@ public class SearchFormWidget180x150 extends Composite {
 			airportFrom.setVisible(false);
 			airportFrom.setWidth(FLIGHT_WIDTH);
 			airportFrom.setText(TO);
-			destination.getTextBox().addFocusHandler(new FocusHandler() {
+		/*	destination.getTextBox().addFocusHandler(new FocusHandler() {
 
 				@Override
 				public void onFocus(FocusEvent event) {
@@ -98,7 +99,7 @@ public class SearchFormWidget180x150 extends Composite {
 
 				}
 
-			});
+			});*/
 			airportFrom.getTextBox().addFocusHandler(new FocusHandler() {
 
 				@Override
@@ -353,13 +354,13 @@ public class SearchFormWidget180x150 extends Composite {
 							oracle.setAirportsOnly();
 							destination.setWidth(FLIGHT_WIDTH);
 							lastHotelVal = destination.getValue();
-							destination.setText(FROM);
+							destination.setDestinationValue(FROM);
 							airportFrom.setVisible(true);
 
 						} else {
 							oracle.setAllExcludingAddress();
 							destination.setWidth(HOTEL_WIDTH);
-							destination.setText(lastHotelVal);
+							destination.setDestinationValue(lastHotelVal);
 						}
 					}
 				});
@@ -384,7 +385,7 @@ public class SearchFormWidget180x150 extends Composite {
 						if (event.getValue()) {
 							oracle.setAllExcludingAddress();
 							destination.setWidth(HOTEL_WIDTH);
-							destination.setText(lastHotelVal);
+							destination.setDestinationValue(lastHotelVal);
 							airportFrom.setVisible(false);
 
 						}
