@@ -1,0 +1,9 @@
+/** Add css rules here for your application. */
+
+:focus {
+	outline: none;
+}
+
+::-moz-focus-inner {
+	border: 0;
+}

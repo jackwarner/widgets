@@ -1,0 +1,121 @@
+@external .gwt-SuggestBoxPopup .suggestPopupBottomLeftInner;
+.gwt-SuggestBoxPopup .suggestPopupBottomLeftInner {
+	width: 0px;
+	height: 0px;	
+}
+@external .gwt-SuggestBoxPopup .suggestPopupTopLeftInner;
+.gwt-SuggestBoxPopup .suggestPopupTopLeftInner {
+	width: 0px;
+	height: 0px;	
+}
+@external .gwt-SuggestBoxPopup .suggestPopupBottomRightInner;
+.gwt-SuggestBoxPopup .suggestPopupBottomRightInner {
+	width: 0px;
+	height: 0px;	
+}
+@external .gwt-SuggestBoxPopup .suggestPopupTopRightInner;
+.gwt-SuggestBoxPopup .suggestPopupTopRightInner {
+	width: 0px;
+	height: 0px;	
+}
+@external .gwt-SuggestBoxPopup .item;
+.gwt-SuggestBoxPopup .item {
+	color: #5D99B2;
+	height: 19px;
+	font-size: 11px;	
+	padding: 1px;
+	width: 150px;
+	overflow: hidden;
+}
+@external .gwt-SuggestBoxPopup .item-selected;
+.gwt-SuggestBoxPopup .item-selected {
+	color: #000000;
+	font-size: 11px;
+	background-color: #fedb6c;	
+	width: 150px;
+	overflow: hidden;
+}
+@external .gwt-SuggestBox;
+.gwt-SuggestBox {
+	color: #5D99B2;
+	font-size: 11px;
+	border: 1px solid #EBAC04;
+}
+@external .gwt-SuggestBoxPopup;
+.gwt-SuggestBoxPopup {
+	width: 150px;	
+}
+@external .gwt-DatePicker .datePickerDay;
+.gwt-DatePicker .datePickerDay {
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 0px;
+	padding-bottom: 2px;
+}
+@external .gwt-DatePicker .datePickerDay .datePickerWeekendLabel;
+.gwt-DatePicker .datePickerDay .datePickerWeekendLabel {
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 0px;
+	padding-bottom: 2px;
+}
+@external .gwt-DatePicker .datePickerWeekdayLabel;
+.gwt-DatePicker .datePickerDay .datePickerWeekdayLabel {
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 0px;
+	padding-bottom: 2px;
+}
+@external .gwt-DatePicker .datePickerWeekdayLabel;
+.gwt-DatePicker .datePickerDay .datePickerWeekdayLabel {
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 0px;
+	padding-bottom: 2px;
+}
+@external .gwt-DatePicker .datePickerDayIsToday;
+.gwt-DatePicker .datePickerDayIsToday {
+	padding-left: 6px;
+	padding-right: 6px;
+	padding-top: 0px;
+	padding-bottom: 2px;
+}
+@external .gwt-DateBox;
+.gwt-DateBox {
+	color: #5D99B2;
+	font-size: 11px;
+	border: 1px solid #EBAC04;
+}
+@external .dateBoxPopup;
+.dateBoxPopup {
+	position: absolute !important;
+	top: 6px !important;
+	left: 4px !important;	
+}
+@external .disabled;
+.disabled {
+	color: #999999;	
+}
+
+
+
+@external .summer-searchform;
+.summer-searchform {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;	
+}
+@external .summer-searchform .labelStyle;
+.summer-searchform .labelStyle {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;
+}
+@external .summer-searchform .searchButton;
+.summer-searchform .searchButton {
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	font-size: 12px;
+	font-weight: bold;	
+	color: #013250;
+	overflow: hidden;
+	cursor: pointer;
+}
