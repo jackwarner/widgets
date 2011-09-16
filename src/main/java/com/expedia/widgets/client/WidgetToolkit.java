@@ -18,6 +18,7 @@ package com.expedia.widgets.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.core.client.RunAsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
 
 /**
@@ -31,11 +32,46 @@ public class WidgetToolkit implements EntryPoint {
    * This method sets up the top-level services used by the application.
    */
   public void onModuleLoad() {
-	  final SearchFormGinjector injector = GWT.create(SearchFormGinjector.class);
-	  SearchFormWidget180x150 test = injector.getSearchForm300x250();
-	 // test.setPixelSize(180, 150);
-	  RootPanel.get().setPixelSize(180, 150);
-	  RootPanel.get().add(test);
+	  
+	  
+	  GWT.runAsync(WidgetToolkitLoad.class, new RunAsyncCallback() {
+
+			@Override
+			public void onFailure(Throwable reason) {
+				System.err
+						.println("Unable to load code for Hotel Amenity Widget.");
+			}
+
+			@Override
+			public void onSuccess() {
+				
+				RootPanel.get().add(new Load180x150(),0,0);
+				
+				GWT.runAsync(WidgetToolkitContent.class, new RunAsyncCallback() {
+
+					@Override
+					public void onFailure(Throwable reason) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void onSuccess() {
+						// TODO Auto-generated method stub
+						final SearchFormGinjector injector = GWT.create(SearchFormGinjector.class);
+						 SearchFormWidget180x150 test = injector.getSearchForm300x250();
+						 RootPanel.get().add(test,0,0);
+					}
+					
+				});
+			}
+
+		});
+	  
+	 
+
+	//  RootPanel.get().setPixelSize(180, 150);
+	 
 	
   }
 }

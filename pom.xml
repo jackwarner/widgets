@@ -5,7 +5,6 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.expedia.widgets</groupId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
   <name>com.expedia.widgets.WidgetToolkit</name>
 
   <properties>
@@ -90,6 +89,14 @@
       <artifactId>slf4j-api</artifactId>
       <version>1.6.1</version>
     </dependency>
+    
+    <dependency>
+    	<groupId>com.google.gwt.inject</groupId>
+    	<artifactId>gin</artifactId>
+    	<version>1.5.0</version>
+    	<scope>compile</scope>
+	</dependency>
+    
   </dependencies>
   
   <build>
@@ -132,10 +139,10 @@
              see gwt-maven-plugin documentation at codehaus.org --> 
         <configuration>
           <!-- URL that should be automatically opened in the GWT shell (gwt:run). -->
-          <runTarget>DynaTableRf.html</runTarget>
+          <runTarget>WidgetToolkit.html</runTarget>
           <!-- Ask GWT to create the Story of Your Compile (SOYC) (gwt:compile) -->
           <compileReport>true</compileReport>
-          <module>com.expedia.widgets.DynaTableRf</module>
+          <module>com.expedia.widgets.WidgetToolkit</module>
           <logLevel>INFO</logLevel>
           <style>${gwt.style}</style>
 
@@ -240,5 +247,6 @@
       </plugins>
     </pluginManagement>
   </build>
-  <artifactId>WidgetToolkit</artifactId>
+  <artifactId>ewt</artifactId>
+  <version>1.0.0</version>
 </project>

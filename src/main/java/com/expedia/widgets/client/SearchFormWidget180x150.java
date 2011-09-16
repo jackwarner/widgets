@@ -45,9 +45,9 @@ public class SearchFormWidget180x150 extends Composite {
 	AbsolutePanel panel = new AbsolutePanel();
 	private final String GROUP = "lobs";
 	static private SearchFormConfiguration config;
+	
 	final protected SearchFormResources180x150 resources = GWT
 			.create(SearchFormResources180x150.class);
-	final String HOTEL_TEXT = "Hotel Destination";
 
 	DatePicker pickerToday = new DatePicker();
 	DatePicker pickerTomorrow = new DatePicker();
@@ -74,11 +74,9 @@ public class SearchFormWidget180x150 extends Composite {
 			panel.add(getLineOfBusinessSelection(), 14, 36);
 
 			destination.setWidth(HOTEL_WIDTH);
-			if (config.getDefaultSearch().length() > 0) {
-				destination.setDestinationValue(config.getDefaultSearch());
-			} else {
-				destination.setDestinationValue(HOTEL_TEXT);
-			}
+			
+			destination.setDestinationValue(config.getDefaultSearch());
+		
 			StyleInjector.inject(resources.myCss().getText());
 
 			destination.setLimit(3);
@@ -86,20 +84,7 @@ public class SearchFormWidget180x150 extends Composite {
 			airportFrom.setVisible(false);
 			airportFrom.setWidth(FLIGHT_WIDTH);
 			airportFrom.setText(TO);
-		/*	destination.getTextBox().addFocusHandler(new FocusHandler() {
-
-				@Override
-				public void onFocus(FocusEvent event) {
-					if (destination.getValue().equals(HOTEL_TEXT)
-							|| destination.getValue().equals(
-									config.getDefaultSearch())
-							|| destination.getValue().equals(FROM)) {
-						destination.setText("");
-					}
-
-				}
-
-			});*/
+	
 			airportFrom.getTextBox().addFocusHandler(new FocusHandler() {
 
 				@Override
