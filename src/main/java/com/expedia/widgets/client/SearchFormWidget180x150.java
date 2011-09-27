@@ -129,16 +129,7 @@ public class SearchFormWidget180x150 extends Composite {
 
 				@Override
 				public void onValueChange(final ValueChangeEvent<Date> event) {
-					GWT.runAsync(new RunAsyncCallback() {
-
-						@Override
-						public void onFailure(Throwable reason) {
-							// TODO Auto-generated method stub
-
-						}
-
-						@Override
-						public void onSuccess() {
+					
 							// TODO Auto-generated method stub
 							Date today = new Date();
 							if (event.getValue().before(today)) {
@@ -158,9 +149,7 @@ public class SearchFormWidget180x150 extends Composite {
 							}
 						}
 
-					});
-
-				}
+					
 
 			});
 
@@ -190,16 +179,7 @@ public class SearchFormWidget180x150 extends Composite {
 						public void onValueChange(
 								final ValueChangeEvent<Date> event) {
 
-							GWT.runAsync(new RunAsyncCallback() {
-
-								@Override
-								public void onFailure(Throwable reason) {
-									// TODO Auto-generated method stub
-
-								}
-
-								@Override
-								public void onSuccess() {
+						
 									// TODO Auto-generated method stub
 									Date today = new Date();
 									if (event.getValue().before(today)) {
@@ -220,9 +200,7 @@ public class SearchFormWidget180x150 extends Composite {
 									}
 								}
 
-							});
-
-						}
+							
 
 					});
 
@@ -244,17 +222,7 @@ public class SearchFormWidget180x150 extends Composite {
 
 				@Override
 				public void onClick(ClickEvent event) {
-					GWT.runAsync(new RunAsyncCallback() {
-
-						@Override
-						public void onFailure(Throwable reason) {
-							// TODO Auto-generated method stub
-
-						}
-
-						@Override
-						public void onSuccess() {
-							// TODO Auto-generated method stub
+					
 							String trackingRedirect = "";
 							if (flights.getValue()) {
 								FlightHotelSearchData flightHotelData = new FlightHotelSearchData();
@@ -292,9 +260,7 @@ public class SearchFormWidget180x150 extends Composite {
 							}
 						}
 
-					});
-
-				}
+				
 
 			});
 			fPanel.add(searchButton);
@@ -324,17 +290,7 @@ public class SearchFormWidget180x150 extends Composite {
 		flights.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
 			@Override
 			public void onValueChange(final ValueChangeEvent<Boolean> event) {
-				GWT.runAsync(new RunAsyncCallback() {
-
-					@Override
-					public void onFailure(Throwable reason) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void onSuccess() {
-						// TODO Auto-generated method stub
+				
 						if (event.getValue()) {
 							oracle.setAirportsOnly();
 							destination.setWidth(FLIGHT_WIDTH);
@@ -348,9 +304,7 @@ public class SearchFormWidget180x150 extends Composite {
 							destination.setDestinationValue(lastHotelVal);
 						}
 					}
-				});
-
-			}
+				
 		});
 		hotels.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
 

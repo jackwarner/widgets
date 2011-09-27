@@ -19,6 +19,7 @@ package com.expedia.widgets.client;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.core.client.RunAsyncCallback;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
 
 /**
@@ -27,13 +28,13 @@ import com.google.gwt.user.client.ui.RootPanel;
  */
 public class WidgetToolkit implements EntryPoint {
   
-
+	final SearchFormGinjector injector = GWT.create(SearchFormGinjector.class);
   /**
    * This method sets up the top-level services used by the application.
    */
   public void onModuleLoad() {
 	  
-	  
+	  if (Window.Location.getParameter("widgetname").equals("searchform")) {
 	  GWT.runAsync(WidgetToolkitLoad.class, new RunAsyncCallback() {
 
 			@Override
@@ -58,8 +59,8 @@ public class WidgetToolkit implements EntryPoint {
 					@Override
 					public void onSuccess() {
 						// TODO Auto-generated method stub
-						final SearchFormGinjector injector = GWT.create(SearchFormGinjector.class);
-						 SearchFormWidget180x150 test = injector.getSearchForm300x250();
+						
+						 SearchFormWidget180x150 test = injector.getSearchForm180x150();
 						 RootPanel.get().add(test,0,0);
 					}
 					
@@ -67,6 +68,11 @@ public class WidgetToolkit implements EntryPoint {
 			}
 
 		});
+	  }
+	  else {
+		  DealsWidget250x250 test = injector.getDealsWidget250x250();
+		  RootPanel.get().add(test,0,0);
+	  }
 	  
 	 
 
