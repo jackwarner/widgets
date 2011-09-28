@@ -53,7 +53,6 @@ public class LocationDestinationSuggestion extends ExpediaSuggestion {
 
 		});
 		initWidget(destination);
-		// return destination;
 	}
 
 	public HotelSearchCity getData() {

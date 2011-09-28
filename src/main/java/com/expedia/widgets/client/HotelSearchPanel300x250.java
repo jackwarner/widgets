@@ -38,11 +38,11 @@ public class HotelSearchPanel300x250 extends LOB_Hotel {
 
 		adults = new Searchform_Dropdown(LineOfBusinessConfiguration
 				.getSearchFormConstants().NumberOfAdults() + ":",
-				AdultCounts.adults, 116, 21);
+				AdultCounts.adults, 122, 24);
 		LocationDestinationSuggestion destinationSuggestion = new LocationDestinationSuggestion(LineOfBusinessConfiguration.getSearchFormConstants().Destination(), LineOfBusinessConfiguration.isCustomSearchLocation());
 		destination = new Searchform_SuggestionBox(
 				LineOfBusinessConfiguration.getSearchFormConstants()
-						.Destination() + ":", destinationSuggestion);
+						.Destination() + ":", destinationSuggestion, new Integer("116"), new Integer("20"), 5);
 		places.add(destination);
 		AbsolutePanel spacer = new AbsolutePanel();
 		spacer.setPixelSize(5, 5);

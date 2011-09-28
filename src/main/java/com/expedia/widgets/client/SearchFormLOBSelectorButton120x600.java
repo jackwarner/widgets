@@ -25,10 +25,7 @@ public class SearchFormLOBSelectorButton120x600 extends
 	@Override
 	protected void setRight() {
 		if (lobs.size() > 1) {
-			System.err.println("Size is " + getConfig().getLinesOfBusiness().get(0));
-		//	Image i = new Image(resources.selectorButtonRight22x49Full());
-			System.err.println("resources are " + resources.toString());
-			//System.err.println("Image is " + i.toString());
+	
 			right = new ArrowMarkerSearchForm120x600(0, true, "",
 					true, getConfig().getLinesOfBusiness().get(0),  new Image(resources.selectorButtonRight22x49Full()), new Image(resources.selectorButtonRightNoArrow22x49Full()), new Image(resources.selectorButtonLeft22x49Full()), new Image(resources.selectorButtonLeftNoArrow22x49Full()));
 		} else {

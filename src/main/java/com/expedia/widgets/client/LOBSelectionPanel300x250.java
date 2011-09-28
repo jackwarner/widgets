@@ -32,11 +32,11 @@ public class LOBSelectionPanel300x250 extends LOBSelectionPanel {
 				try {
 					
 					LOB lob = lobIter.next().getLineOfBusinessPanel(panelMaker);
-
+					addLOBPanel(lob);
 					if (!config.getDefaultLOB().equals(lob.getEnumName())) {
 						lob.setVisible(false);
 					}
-					panel.insert(lob, 5, 80, 0);
+					panel.insert(lob, 3, 60, 0);
 				} catch (Exception e) {
 					System.err
 							.println("Check that you are instantiating the right size of LOBSelection Panel for your Widget size.");

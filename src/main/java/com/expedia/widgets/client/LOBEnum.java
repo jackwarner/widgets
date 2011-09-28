@@ -16,7 +16,7 @@ public enum LOBEnum {
 		}
 		@Override
 		public LOB getLineOfBusinessPanel(LineOfBusinessPanelMaker skin) {
-			return null;
+			return skin.getFlightPanel();
 		}
 
 	},
@@ -155,6 +155,7 @@ public enum LOBEnum {
 		return lookup.get(key);
 	}
 
+	
 	abstract public Image getIcon(LineOfBusinessSkin skin);
 	abstract public LOB getLineOfBusinessPanel(LineOfBusinessPanelMaker skin);
 	

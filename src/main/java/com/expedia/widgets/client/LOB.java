@@ -6,7 +6,7 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
 public abstract class LOB extends Composite implements LineOfBusinessPanel {
-	//protected LineOfBusinessConfiguration localized;
+	
 	protected SearchData searchData;
 	protected FocusPanel parentPanel = new FocusPanel();
 
@@ -15,7 +15,6 @@ public abstract class LOB extends Composite implements LineOfBusinessPanel {
 	public LOB(
 			) {
 
-		//this.localized = lobConfig;
 		setSearchData();
 
 	}

@@ -46,7 +46,7 @@ abstract public class SearchFormLOBSelectorButton extends
 		});
 
 		topPanel.add(left);
-		//topPanel.add(skin.getSelectorButtonMiddle());
+		topPanel.add(new Image(resources.selectorButtonMiddle()));
 
 		right.getImage().addClickHandler(new ClickHandler() {
 
