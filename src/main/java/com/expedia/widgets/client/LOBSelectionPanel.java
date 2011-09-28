@@ -11,34 +11,35 @@ import com.google.inject.Inject;
 
 public abstract class LOBSelectionPanel extends Composite {
 	final private LineOfBusinessConfiguration config;
-	final protected ArrayList<LOB> lobArray;
-	private LOB selectedLOBPanel;
+	//final protected ArrayList<LOB> lobArray;
+	private LOBEnum selectedLOBPanel;
 	protected LineOfBusinessSelector selector;
 	private FocusPanel fPanel = new FocusPanel();
+	protected LineOfBusinessPanelMaker panelMaker;
 
 	@Inject
 	public LOBSelectionPanel(
 			final LineOfBusinessConfiguration config) {
 		this.config = config;
-		LOBFactory factory = new LOBFactory(this.config);
-		this.lobArray = factory.getLOBs();
-		selectedLOBPanel = this.lobArray.get(0);
+		//LOBFactory factory = new LOBFactory(this.config);
+		//this.lobArray = factory.getLOBs();
+	//	selectedLOBPanel = this.lobArray.get(0);
 		setSelector();
 		try {
 			selector.addLOBChangedHandler(new LOBListener() {
 
 				@Override
 				public void onChange() {
-					Iterator<LOB> lobIter = lobArray.iterator();
+					Iterator<LOBEnum> lobIter = config.getLinesOfBusiness().iterator();
 					while (lobIter.hasNext()) {
-						LOB myLOB = lobIter.next();
+						LOBEnum myLOB = lobIter.next();
 						try {
-							if (myLOB.getEnumName().equals(
+							if (myLOB.equals(
 									selector.getSelectedLOB())) {
-								myLOB.setVisible(true);
+								//myLOB.setVisible(true);
 								selectedLOBPanel = myLOB;
 							} else {
-								myLOB.setVisible(false);
+								//myLOB.setVisible(false);
 							}
 						} catch (Exception e) {
 							System.err.println(e.getLocalizedMessage());
@@ -59,8 +60,8 @@ public abstract class LOBSelectionPanel extends Composite {
 			@Override
 			public void onClick(ClickEvent event) {
 			
-					selectedLOBPanel.setCurrentSearchValues();
-					String urlToOpen = selectedLOBPanel.getURL(config);
+					selectedLOBPanel.getLineOfBusinessPanel(panelMaker).setCurrentSearchValues();
+					String urlToOpen = selectedLOBPanel.getLineOfBusinessPanel(panelMaker).getURL(config);
 					System.err.println("Trying to open " + urlToOpen);
 					Utility.OpenLink(urlToOpen, config.getOpenLinksInNewWindow());
 			
@@ -85,9 +86,6 @@ public abstract class LOBSelectionPanel extends Composite {
 	}
 
 
-	public ArrayList<LOB> getArrayOfLOBs() {
-		return lobArray;
-	}
 
 	public abstract void setSelector();
 }

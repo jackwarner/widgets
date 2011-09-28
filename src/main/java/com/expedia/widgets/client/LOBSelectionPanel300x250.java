@@ -12,7 +12,7 @@ public class LOBSelectionPanel300x250 extends LOBSelectionPanel {
 	@Inject
 	public LOBSelectionPanel300x250(LineOfBusinessConfiguration config) {
 		super(config);
-
+		panelMaker = new LineOfBusinessPanels300x250();
 		AbsolutePanel panel = new AbsolutePanel();
 		try {
 			panel.add(getSelector(), 165, 0);
@@ -24,17 +24,19 @@ public class LOBSelectionPanel300x250 extends LOBSelectionPanel {
 		if (config.getLinesOfBusiness().size() <= 0) {
 			System.err.println("Cant build a search form with no LOBs!");
 		} else {
-
-			Iterator<LOB> lobIter = getArrayOfLOBs().iterator();
+			
+			
+			
+			Iterator<LOBEnum> lobIter = config.getLinesOfBusiness().iterator();
 			while (lobIter.hasNext()) {
 				try {
-					LOB lob = lobIter.next();
+					
+					LOB lob = lobIter.next().getLineOfBusinessPanel(panelMaker);
 
 					if (!config.getDefaultLOB().equals(lob.getEnumName())) {
 						lob.setVisible(false);
 					}
-					//panel.insert(lob, layout.getLOBLeft(), layout.getLOBTop(),
-						//	0);
+					panel.insert(lob, 5, 80, 0);
 				} catch (Exception e) {
 					System.err
 							.println("Check that you are instantiating the right size of LOBSelection Panel for your Widget size.");

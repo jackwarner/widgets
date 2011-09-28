@@ -1,20 +1,21 @@
 package com.expedia.widgets.client;
 
 import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.FocusPanel;
+import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 
 public abstract class LOB extends Composite implements LineOfBusinessPanel {
-	protected LineOfBusinessConfiguration localized;
+	//protected LineOfBusinessConfiguration localized;
 	protected SearchData searchData;
+	protected FocusPanel parentPanel = new FocusPanel();
 
-	public LOB() {
 
-	}
 	@Inject
 	public LOB(
-			LineOfBusinessConfiguration lobConfig) {
+			) {
 
-		this.localized = lobConfig;
+		//this.localized = lobConfig;
 		setSearchData();
 
 	}
@@ -30,12 +31,14 @@ public abstract class LOB extends Composite implements LineOfBusinessPanel {
 
 	public abstract String getName();
 
-	final public LineOfBusinessConfiguration getLocalizedValues() {
-		return localized;
-	}
-
 	protected abstract void setSearchData();
-
+	protected void setParentPanelContent(Widget w) {
+		parentPanel.clear();
+		parentPanel.add(w);
+	}
+	protected void initWidgetParent() {
+		initWidget(parentPanel);
+	}
 	public final SearchData getSearchData() {
 		return this.searchData;
 	}

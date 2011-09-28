@@ -15,22 +15,22 @@ abstract public class ArrowMarkerSearchForm extends Composite {
 	final private Image arrow;
 
 	public ArrowMarkerSearchForm(int position, boolean isRight, String title,
-			boolean hasArrow, LOBEnum lob) {
+			boolean hasArrow, LOBEnum lob, Image selectorButtonRight, Image selectorButtonRightNoArrow, Image selectorButtonLeft, Image selectorButtonLeftNoArrow) {
 		this.lobEnum = lob;
 		this.position = position;
 		this.isRight = isRight;
 
 		if (isRight) {
 			if (hasArrow) {
-				this.arrow = skin.getSelectorButtonRight();
+				this.arrow = selectorButtonRight;
 			} else {
-				this.arrow = skin.getSelectorButtonRightNoArrow();
+				this.arrow = selectorButtonRightNoArrow;
 			}
 		} else {
 			if (hasArrow) {
-				this.arrow = skin.getSelectorButtonLeft();
+				this.arrow = selectorButtonLeft;
 			} else {
-				this.arrow = skin.getSelectorButtonLeftNoArrow();
+				this.arrow = selectorButtonLeftNoArrow;
 			}
 		}
 

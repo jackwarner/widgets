@@ -1,9 +1,10 @@
 package com.expedia.widgets.client;
 
+import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.resources.client.ClientBundle.Source;
 
-public interface SearchButtonResources300x250 {
+public interface SearchButtonResources300x250 extends ClientBundle {
 
 	final String FOLDER = "searchform/";
 	final String SUBFOLDER_300x250 = "300x250/";

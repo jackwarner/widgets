@@ -8,6 +8,7 @@ import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Panel;
+import com.google.inject.Inject;
 
 
 abstract public class SearchFormLOBSelectorButton extends
@@ -22,6 +23,7 @@ abstract public class SearchFormLOBSelectorButton extends
 	protected int currentIndex = 0;
 	private LineOfBusinessConfiguration config;
 
+	@Inject
 	public SearchFormLOBSelectorButton(
 			LineOfBusinessConfiguration config) {
 

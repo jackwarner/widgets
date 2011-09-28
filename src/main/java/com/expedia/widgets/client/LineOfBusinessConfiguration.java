@@ -2,6 +2,8 @@ package com.expedia.widgets.client;
 
 import java.util.ArrayList;
 
+import com.google.inject.Inject;
+
 
 public class LineOfBusinessConfiguration {
 	private static String defaultHotelSearch = "";
@@ -11,6 +13,7 @@ public class LineOfBusinessConfiguration {
 	private boolean newWindow = false;
 	ArrayList<LOBEnum> lobs = new ArrayList<LOBEnum>();
 
+	@Inject
 	public LineOfBusinessConfiguration(SearchFormConstants localized) {
 		LineOfBusinessConfiguration.localized = localized;
 	}

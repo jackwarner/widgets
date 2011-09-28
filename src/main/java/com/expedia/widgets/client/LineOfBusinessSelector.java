@@ -3,6 +3,7 @@
  */
 package com.expedia.widgets.client;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.ui.Composite;
 
@@ -14,6 +15,8 @@ public abstract class LineOfBusinessSelector extends Composite {
 
 	final private HandlerManager handlerManager = new HandlerManager(this);
 	private LOBEnum selectedLOB = LOBEnum.Hotel;
+	final protected SelectorResources resources = GWT
+			.create(SelectorResources.class); 
 
 	protected void setSelection(LOBEnum selection) {
 		selectedLOB = selection;

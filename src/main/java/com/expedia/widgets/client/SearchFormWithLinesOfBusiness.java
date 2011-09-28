@@ -1,30 +1,27 @@
 package com.expedia.widgets.client;
 
-
 import com.google.gwt.user.client.ui.Composite;
 
 public class SearchFormWithLinesOfBusiness extends Composite implements
-SearchFormContract {
+		SearchFormContract {
 
-private LineOfBusinessConfiguration config;
+	private LineOfBusinessConfiguration config;
 
+	protected LOBSelectionPanel lobsPanel;
 
-protected LOBSelectionPanel lobsPanel;
+	public SearchFormWithLinesOfBusiness() {
+		try {
+			config = new SearchFormConfiguration(ConfigurationData.get()).getLineOfBusinessConfiguration();
+		} catch (WidgetNameException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
-public SearchFormWithLinesOfBusiness() {
+	
 
-}
-
-public SearchFormWithLinesOfBusiness(
-	LineOfBusinessConfiguration config) {
-this.config = config;
-
-}
-
-
-
-public LineOfBusinessConfiguration getConfig() {
-return config;
-}
+	public LineOfBusinessConfiguration getConfig() {
+		return config;
+	}
 
 }

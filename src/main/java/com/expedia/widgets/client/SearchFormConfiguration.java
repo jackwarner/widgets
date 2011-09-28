@@ -83,6 +83,8 @@ public class SearchFormConfiguration extends Configuration {
 					PointOfSale myPOS = Configuration.getPOS();
 					if (myPOS.getAllowedLinesOfBusiness().contains(
 							LOBEnum.get(AMENITY_PREFIX + a[i].toLowerCase()))) {
+						//LOBEnum theLOB = ;
+						//theLOB.setLineOfBusinessPanel();
 						lobConfig.addLob(LOBEnum.get(AMENITY_PREFIX
 								+ a[i].toLowerCase()));
 					}

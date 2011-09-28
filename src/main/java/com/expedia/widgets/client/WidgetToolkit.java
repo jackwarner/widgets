@@ -34,41 +34,52 @@ public class WidgetToolkit implements EntryPoint {
    */
   public void onModuleLoad() {
 	  
+	  String sizeString = Window.Location.getParameter("size");
+	  
 	  if (Window.Location.getParameter("widgetname").equals("searchform")) {
-	  GWT.runAsync(WidgetToolkitLoad.class, new RunAsyncCallback() {
-
-			@Override
-			public void onFailure(Throwable reason) {
-				System.err
-						.println("Unable to load code for Hotel Amenity Widget.");
-			}
-
-			@Override
-			public void onSuccess() {
-				
-				RootPanel.get().add(new Load180x150(),0,0);
-				
-				GWT.runAsync(WidgetToolkitContent.class, new RunAsyncCallback() {
-
-					@Override
-					public void onFailure(Throwable reason) {
-						// TODO Auto-generated method stub
-						
-					}
-
-					@Override
-					public void onSuccess() {
-						// TODO Auto-generated method stub
-						
-						 SearchFormWidget180x150 test = injector.getSearchForm180x150();
-						 RootPanel.get().add(test,0,0);
-					}
+		  
+	  if (sizeString.equals("180x150"))
+		  GWT.runAsync(WidgetToolkitLoad.class, new RunAsyncCallback() {
+			  
+				@Override
+				public void onFailure(Throwable reason) {
+					System.err
+							.println("Unable to load code for Hotel Amenity Widget.");
+				}
+	
+				@Override
+				public void onSuccess() {
 					
-				});
-			}
-
-		});
+					RootPanel.get().add(new Load180x150(),0,0);
+					
+					GWT.runAsync(WidgetToolkitContent.class, new RunAsyncCallback() {
+	
+						@Override
+						public void onFailure(Throwable reason) {
+							// TODO Auto-generated method stub
+							
+						}
+	
+						@Override
+						public void onSuccess() {
+							// TODO Auto-generated method stub
+							
+							 SearchFormWidget180x150 test = injector.getSearchForm180x150();
+							 RootPanel.get().add(test,0,0);
+						}
+						
+					});
+				}
+	
+			});
+	  else if (sizeString.equals("300x250")) {
+		  SearchFormWidget300x250 test = injector.getSearchForm300x250();
+		  System.out.println("Added");
+			 RootPanel.get().add(test,0,0);
 	  }
+	  }
+	
+	  
 	  else {
 		  DealsWidget250x250 test = injector.getDealsWidget250x250();
 		  RootPanel.get().add(test,0,0);

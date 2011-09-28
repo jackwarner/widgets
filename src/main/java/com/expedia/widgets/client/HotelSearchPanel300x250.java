@@ -4,6 +4,7 @@ import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.inject.Inject;
 
 public class HotelSearchPanel300x250 extends LOB_Hotel {
 
@@ -14,9 +15,10 @@ public class HotelSearchPanel300x250 extends LOB_Hotel {
 	private Searchform_DualDateModifier dates;
 	private Searchform_Dropdown adults;
 
+	@Inject
 	public HotelSearchPanel300x250(
-			LineOfBusinessConfiguration localized) {
-		super( localized);
+			) {
+		
 		AbsolutePanel hotelPanel = new AbsolutePanel();
 
 		hotelPanel.setStyleName("background");
@@ -47,7 +49,6 @@ public class HotelSearchPanel300x250 extends LOB_Hotel {
 		places.add(spacer);
 
 		places.add(adults);
-		// hotelContentPanel.add();
 
 		HorizontalPanel more = new HorizontalPanel();
 		more.add(dates.current);
@@ -63,8 +64,9 @@ public class HotelSearchPanel300x250 extends LOB_Hotel {
 		buttonSpacer.setPixelSize(20, 15);
 		hotelContentPanel.add(buttonSpacer);
 		hotelPanel.add(hotelContentPanel);
-
-		initWidget(hotelPanel);
+		
+		setParentPanelContent(hotelPanel);
+		initWidgetParent();
 	}
 
 	/*
