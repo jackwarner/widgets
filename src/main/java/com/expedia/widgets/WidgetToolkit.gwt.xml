@@ -27,8 +27,8 @@
    <!-- And initial load sequence - see GWT docs for explanation http://code.google.com/webtoolkit/doc/latest/DevGuideCodeSplitting.html#sequence  -->
   <extend-configuration-property name="compiler.splitpoint.initial.sequence" value="com.expedia.widgets.client.WidgetToolkitLoad" />
   <extend-configuration-property name="compiler.splitpoint.initial.sequence" value="com.expedia.widgets.client.WidgetToolkitContent" />
- <!-- <extend-property name="locale" values="en_US,en_GB,en_AU,fr_FR,de_DE,it_IT,nl_NL,es_ES,nb_NO,da_DK,sv_SE,en_IE,fr_BE,nl_BE,fr_CA,en_CA,es_MX,de_AT,en_SG,ja_JP,en_IN,en_NZ"/>
-   -->
+  <extend-property name="locale" values="en_US,fr_CA"/>
+  
   <!-- Supported locales -->
   <inherits name="com.google.gwt.i18n.I18N"/><!--
    <extend-property name="locale" values="en"/>
