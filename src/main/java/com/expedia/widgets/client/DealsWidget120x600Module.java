@@ -10,7 +10,7 @@ import com.google.inject.Singleton;
  * @author jackwarner
  *
  */
-public class DealsWidget250x250Module extends AbstractGinModule {
+public class DealsWidget120x600Module extends AbstractGinModule {
 
 	/* (non-Javadoc)
 	 * @see com.google.gwt.inject.client.AbstractGinModule#configure()
@@ -18,7 +18,7 @@ public class DealsWidget250x250Module extends AbstractGinModule {
 	@Override
 	protected void configure() {
 		// TODO Auto-generated method stub
-		bind(DealsWidget250x250.class).in(Singleton.class);
+		bind(DealsWidget120x600.class).in(Singleton.class);
 	}
 
 }

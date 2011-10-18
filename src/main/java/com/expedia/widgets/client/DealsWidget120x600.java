@@ -10,8 +10,8 @@ import com.google.gwt.user.client.ui.Label;
  * @author jackwarner
  *
  */
-public class DealsWidget250x250 extends Composite {
-	public DealsWidget250x250() {
+public class DealsWidget120x600 extends Composite {
+	public DealsWidget120x600() {
 		initWidget(new Label("Deals"));
 	}
 
