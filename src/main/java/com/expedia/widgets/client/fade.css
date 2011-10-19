@@ -1,0 +1,30 @@
+@external .yfttransparent;
+.yfttransparent {
+    zoom: 1;
+   filter: alpha(opacity=0);
+   opacity: 0.0;
+}
+@external .yft00;
+.yft00 {
+   zoom: 1;
+   filter: alpha(opacity=100);
+   opacity: 1;
+}
+@external .yft01;
+.yft01 {
+   zoom: 1;
+   filter: alpha(opacity=75);
+   opacity: 0.75;
+}
+@external .yft02;
+.yft02 {
+   zoom: 1;
+   filter: alpha(opacity=50);
+   opacity: 0.50;
+}
+@external .yft03;
+.yft03 {
+   zoom: 1;
+   filter: alpha(opacity=25);
+   opacity: 0.25;
+}

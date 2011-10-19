@@ -136,5 +136,11 @@ public class SearchFormConfiguration extends Configuration {
 		return LineOfBusinessConfiguration.getDefaultSearch();
 	}
 
+	@Override
+	WidgetSkin getSkin() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
 

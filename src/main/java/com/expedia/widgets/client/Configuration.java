@@ -30,7 +30,6 @@ abstract public class Configuration {
 	private String layoutString = "";
 	private String skinString = "";
 
-	private ExpediaWidgetLayout layout2;
 
 	private static String queryString;
 	final private static TrackingConstants tracking = new TrackingConstants();
@@ -255,10 +254,6 @@ abstract public class Configuration {
 
 	
 
-	public WidgetSkin getSkin2() {
-		return layout2.getSkin();
-	}
-
 	final public String getQueryString() {
 		return queryString;
 	}
@@ -279,6 +274,8 @@ abstract public class Configuration {
 
 	}
 
+	
+	
 	/**
 	 * Widgets may have primary animation loops, such as looping through cities
 	 * in a deal or lines of business in a search form. If they do, this is how
@@ -315,4 +312,6 @@ abstract public class Configuration {
 	}
 
 	abstract public void setWidgetName();
+	
+	abstract WidgetSkin getSkin();
 }
