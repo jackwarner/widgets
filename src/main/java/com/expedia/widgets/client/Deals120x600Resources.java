@@ -1,6 +1,7 @@
 package com.expedia.widgets.client;
 
 import com.google.gwt.resources.client.ClientBundle;
+import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.resources.client.DataResource;
 import com.google.gwt.resources.client.ImageResource;
 
@@ -51,6 +52,9 @@ public interface Deals120x600Resources extends ClientBundle {
 
 	@Source(FOLDER + "expedia_loader.gif")
 	ImageResource loader();
+
+	@Source(FOLDER + SUBFOLDER + "dynamicAd120x600.css")
+	CssResource myCss();
 	
 	
 }

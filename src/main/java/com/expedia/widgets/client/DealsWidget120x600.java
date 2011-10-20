@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 
 import com.expedia.widgets.client.dynamicad.LineOfBusiness;
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.StyleInjector;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
@@ -41,6 +42,7 @@ public class DealsWidget120x600 extends Composite {
 	private DealViewSlider dealView;
 	public DealsWidget120x600() {
 		try {
+			StyleInjector.inject(resources.myCss().getText());
 			config = new DealsWidgetConfiguration(
 					Window.Location.getParameterMap());
 			doLayoutWork();
@@ -87,7 +89,7 @@ public class DealsWidget120x600 extends Composite {
 			config.getSkin().setLoaderPanel(loadingPanel);
 		}
 
-		panel.add(loadingPanel, 0, 45);
+		panel.add(loadingPanel, 0, 225);
 
 	}
 	
@@ -111,6 +113,7 @@ public class DealsWidget120x600 extends Composite {
 				deals = new ArrayList<Widget>();
 				dealParents.clear();
 				Deal120x600 d = null;
+				Deal120x600 d2 = null;
 				Iterator<Entry<String, ArrayList<LineOfBusiness>>> dealIter = lobs
 						.entrySet().iterator();
 				int count = 0;
@@ -128,14 +131,15 @@ public class DealsWidget120x600 extends Composite {
 					// to
 					// support the animation loop
 					if (count == 0) {
-						d = new Deal120x600(entry.getValue(),
+						 d2 = new Deal120x600(entry.getValue(),
 								((Hotel) entry.getValue().get(0))
 										.isHottestDeal(), config);
+						//deals.add(d2);
 					}
 					count++;
 				}
-				deals.add(d);
-				dealParents.add(d);
+				deals.add(d2);
+				dealParents.add(d2);
 				DealViewData dealViewData = new DealViewData(dealParents,
 						config, searchFormUserValues);
 
@@ -175,8 +179,8 @@ public class DealsWidget120x600 extends Composite {
 				}
 				try {
 					hideLoadingPanel();
-					panel.add(dealView, 5,
-							15);
+					panel.add(dealView, 7,
+							0);
 				} catch (Exception e) {
 
 					System.err.println("Problem panel add!");
@@ -228,9 +232,9 @@ public class DealsWidget120x600 extends Composite {
 
 	private void hideLoadingPanel() {
 		loadingPanel.setVisible(false);
-		panel.remove(0);
+	//	panel.remove(0);
 		//layout.addHeaderLogo(panel, getExpediaUrlWithTracking());
-		//layout.setBackground(panel);
+	//	layout.setBackground(panel);
 
 	}
 
@@ -254,10 +258,10 @@ public class DealsWidget120x600 extends Composite {
 		Label failLabel = new Label("Search for Expedia Travel");
 		vPanel.add(failLabel);
 		
-	//	vPanel.setStyleName(getSkin().getBaseStyleName());
-	//	vPanel.addStyleName(getSkin().getFailureLabelStyleName());
+		vPanel.setStyleName(config.getSkin().getBaseStyleName());
+		vPanel.addStyleName(config.getSkin().getFailureLabelStyleName());
 		
-	//	failLabel.addStyleName(getSkin().getFailureLabelStyleName());
+		failLabel.addStyleName(config.getSkin().getFailureLabelStyleName());
 		panel.add(vPanel);
 		panel.addClickHandler(new ClickHandler() {
 

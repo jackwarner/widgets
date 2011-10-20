@@ -24,4 +24,6 @@ public interface WidgetSkin {
 
 	int getStarPanelHeight();
 
+	
+
 }

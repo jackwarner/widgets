@@ -43,7 +43,6 @@ public class Deal120x600 extends Deal {
 			i++;
 		}
 
-		// moreOffersLabel.setText("More Hotel Offers");
 		dealPanel.add(moreOffersLabel, 180, 270);
 
 		initWidget(dealPanel);

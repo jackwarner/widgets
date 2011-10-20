@@ -73,6 +73,7 @@ public interface DealsWidgetSkin extends WidgetSkin {
 	public String getDestinationWidth();
 
 //	public FocusPanel getHeaderImage();
+	
 
 	public Widget getBackgroundImage();
 

@@ -1,0 +1,177 @@
+@external .summer;
+.summer {
+	font-family: Arial, Verdana, sans-serif;
+}
+@external .summer .failure;
+.summer .failure {
+	font-family: Arial, Verdana, sans-serif; 
+	font-size: 14px;
+	font-weight: bold;	
+	padding-left: 10px;
+	padding-right: 10px;
+	color: #013250;
+	cursor: pointer;
+	overflow: hidden;
+}
+@external .summer .offer; 
+.summer .offer {
+	font-family: Arial, Verdana, sans-serif;
+	border-top: 1px solid #CDD6D8;
+	border-bottom: 1px solid #CDD6D8;
+	cursor: pointer;
+	background: #FFFFFF;	
+}
+@external .summer .offer .cityLabel;
+.summer .offer .cityLabel {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 14px;
+	font-weight: bold;	
+	color: #013250;
+	overflow: hidden;
+}
+
+@external .summer .savingsPercent;
+.summer .savingsPercent {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 15px;
+	font-weight: bold;	
+	color: #F47B06;
+}
+
+
+@external .summer .offer .hotelLabel;
+.summer .offer .hotelLabel {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 10px;
+	font-weight: bold;	
+	color: #197BA4;
+	text-decoration: underline;
+	overflow: hidden;
+}
+@external .summer .offer .hotelLabelSmall;
+.summer .offer .hotelLabelSmall {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;
+	font-weight: bold;	
+	color: #013250;
+	overflow: hidden;
+}
+@external .summer .offer .hotelLabelTenPoint;
+.summer .offer .hotelLabelTenPoint {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 10px;
+	font-weight: bold;	
+	color: #013250;
+	overflow: hidden;
+}
+@external .summer .offer .strikePrice;
+.summer .offer .strikePrice {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;
+	font-weight: bold;	
+	color: #F47B06;
+	overflow: hidden;
+	margin-right: -1px;
+}
+@external .summer .offer .offerPrice;
+.summer .offer .offerPrice {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;
+	font-weight: bold;	
+	color: #F47B06;
+	overflow: hidden;
+	/*margin-left: -15px;*/
+}
+@external .summer .offer .offerPriceFourteen;
+.summer .offer .offerPriceFourteen {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 14px;
+	font-weight: bold;	
+	color: #F47B06;
+	overflow: hidden;
+	/*margin-left: -15px;*/
+}
+@external .summer .offer .perNightLabel;
+.summer .offer .perNightLabel {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 11px;
+	color: #197BA4;
+}
+@external .summer .offer .bookButton2;
+.summer .offer .bookButton2 {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 14px;
+	font-weight: bold;	
+	color: #013250;
+	overflow: hidden;
+}
+@external .summer .dropDown120x600;
+.summer .dropDown120x600 {
+	border: 1px solid #CDD6D8;	
+	color: #013250;
+	font-size: 10px;
+	margin: 0;
+}
+@external .summer .mouseOverOffer;
+.summer .mouseOverOffer {
+	background: #e9f4f6;	
+}
+
+
+@external .disabled;
+.disabled {
+	color: #999999;	
+}
+/**
+Styles for form elements, labels, input fields, etc
+*/
+@external .labelText;
+.labelText {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #316981;
+	font-size: 12px;
+	padding-left: 2px;
+}
+@external .titleText;
+.titleText {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #033a59;
+	font-size: 12pt;
+}
+@external .inputField;
+.inputField {
+	font-style: italic;
+ 	color: #797979;
+ 	padding-left: 6px;
+    -moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #b2b5bf;
+	background: -webkit-gradient(linear, left top, left bottombottom, from(#ffffff), to(#f3f2f2));  
+	background: -moz-linear-gradient(top,  #ffffff,  #f3f2f2);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f3f2f2'); /* IE6,IE7 */
+ 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f3f2f2')"; /* IE8 */
+}
+:focus {
+	outline: none;
+}
+
+::-moz-focus-inner {
+	border: 0;
+}
+@external .searchButton;
+.searchButton {
+	font-family: Arial, Verdana, sans-serif;
+	font-size: 14px;
+	text-transform:uppercase;
+	font-weight: bold;	
+	color: #013250;
+	overflow: hidden;
+}
+@external .shadow;
+.shadow {
+	text-shadow: 0.08em 0.08em #FFFFFF;  
+}
+@external .clickable;
+.clickable {
+	cursor: pointer;
+}

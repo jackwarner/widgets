@@ -16,8 +16,6 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.datepicker.client.DateBox;
 
-
-
 /**
  * DealView is responsible for animating multiple hotel deals for a single city.
  * 
@@ -67,8 +65,8 @@ public class DealViewSlider extends DealView {
 		} else {
 			// set a background deal that will always be there -
 			// this creates the impression of looping
-			panel.setSize("120px",  "600px");
-			//Debug.print("Deals size is " + this.deals.size());
+			panel.setPixelSize(110,600);
+			// Debug.print("Deals size is " + this.deals.size());
 			backgroundDeal = this.deals.get(deals.size() - 1);
 			panel.add(backgroundDeal, 0, 0);
 
@@ -90,7 +88,7 @@ public class DealViewSlider extends DealView {
 				System.err.println("Unable to animate first deal.");
 			}
 
-			//Debug.print("Deals size is " + this.deals.size());
+			// Debug.print("Deals size is " + this.deals.size());
 
 			widgetAnimationIndex = 0;
 			timer = new Timer() {
@@ -98,9 +96,11 @@ public class DealViewSlider extends DealView {
 				public void run() {
 
 					if (widgetAnimationIndex >= deals.size()) {
-					/*	Debug.print("We've hit the end of the road: Deals size = "
-								+ deals.size());
-						*/
+						/*
+						 * Debug.print(
+						 * "We've hit the end of the road: Deals size = " +
+						 * deals.size());
+						 */
 						// leave the background in tact, clear the remaining
 						// widgets, and reposition them
 						widgetAnimationIndex = 0;
@@ -115,8 +115,7 @@ public class DealViewSlider extends DealView {
 						}
 					}
 					try {
-						deals
-								.get(widgetAnimationIndex + 1).runLoadAnimation();
+						deals.get(widgetAnimationIndex + 1).runLoadAnimation();
 					} catch (Exception e) {
 						// System.err.println("Couldnt do load animation.");
 						try {
@@ -145,7 +144,7 @@ public class DealViewSlider extends DealView {
 							// if (deals.get(widgetAnimationIndex+1) != null) {
 							(deals.get(widgetAnimationIndex + 1)).animateDeal();
 						} else {
-							//Debug.print("Hit animate background");
+							// Debug.print("Hit animate background");
 							backgroundDeal.animateDeal();
 						}
 					} catch (Exception e) {
@@ -168,26 +167,21 @@ public class DealViewSlider extends DealView {
 			}
 
 		}
-		bigPanel.setSize(data.getWidth() + "px", data.getHeight() + "px");
-		bigPanel.add(panel, 0, 10);
-		bigPanel.add(getNavigationMarkers(), 0, 10);
+		bigPanel.setPixelSize(110, 600);
+		bigPanel.add(panel, 0, 80);
+		bigPanel.add(getNavigationMarkers(), 0, 570);
 
 		miniSearch = new SearchFormSimple(userFormValues, 92);
-		if (miniSearch != null) {
-
-			miniSearch.addSearchHandler(new SearchListener() {
-				@Override
-				public void onMiniSearch() {
-					// timer.cancel();
-					// data.getConfi
-					myData.getConfig().setAnimated(false);
-					handlerManager.fireEvent(new DealsSearchEvent());
-				}
-			});
-			bigPanel.add(miniSearch, 10,
-					10);
-
-		}
+		miniSearch.addSearchHandler(new SearchListener() {
+			@Override
+			public void onMiniSearch() {
+				timer.cancel();
+				// data.getConfi
+				myData.getConfig().setAnimated(false);
+				handlerManager.fireEvent(new DealsSearchEvent());
+			}
+		});
+		bigPanel.add(miniSearch, 9, 36);
 
 		initWidget(bigPanel);
 
@@ -202,21 +196,17 @@ public class DealViewSlider extends DealView {
 
 		HorizontalPanel navigationPanel = new HorizontalPanel();
 
-		navigationPanel.setPixelSize(110,
-				22);
+		navigationPanel.setPixelSize(110, 22);
 		navigationPanel
 				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		navigationPanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
-		//navigationPanel.addStyleName(myData.getSkin().getNavigationMarkers());
+		navigationPanel.addStyleName(myData.getConfig().getSkin()
+				.getNavigationMarkers());
 		// destinations.add(0, "Hottest Deals");
 
-
-		AbsolutePanel leftSpace = new AbsolutePanel();
-
-		//leftSpace.setPixelSize(padWidth, 1);
-		//AbsolutePanel rightSpace = new AbsolutePanel();
-		//rightSpace.setPixelSize(padWidth, 1);
-	
+		// leftSpace.setPixelSize(padWidth, 1);
+		// AbsolutePanel rightSpace = new AbsolutePanel();
+		// rightSpace.setPixelSize(padWidth, 1);
 
 		leftArrow = new ArrowMarker(0, false, null);
 		leftArrow.getImage().addClickHandler(new ClickHandler() {
@@ -247,7 +237,7 @@ public class DealViewSlider extends DealView {
 		navigationPanel.add(rightArrow);
 		updateNavigationMarker(0, true);
 
-		//navigationPanel.add(rightSpace);
+		// navigationPanel.add(rightSpace);
 
 		return navigationPanel;
 	}
@@ -290,7 +280,6 @@ public class DealViewSlider extends DealView {
 
 		updateNavigationMarker(position, false);
 
-		
 	}
 
 	/**

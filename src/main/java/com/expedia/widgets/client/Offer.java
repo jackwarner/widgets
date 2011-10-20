@@ -20,8 +20,7 @@ public abstract class Offer extends Composite implements ClickHandler {
 	protected final Hotel lob;
 	private int offerWidth = 150;
 	private int offerHeight = 130;
-	final protected Deals120x600Resources resources = GWT
-			.create(Deals120x600Resources.class);
+
 	private Label cityLabel = new Label();
 	private Label hotelLabel = new Label();
 	private Label strikePrice = new Label();
@@ -31,7 +30,7 @@ public abstract class Offer extends Composite implements ClickHandler {
 	private SavingsButton button;
 	private StrikeoutAnimation strikeout;
 	private Stars stars;
-	Configuration config;
+	DealsWidgetConfiguration config;
 
 	protected NumberFormat formatter = NumberFormat.getFormat("###");
 
@@ -101,8 +100,7 @@ public abstract class Offer extends Composite implements ClickHandler {
 	}
 
 	protected Image getStrikeoutImage() {
-		//return config.getSkin().getStrikeoutImage();
-		return new Image(resources.strikeout().getSafeUri());
+		return config.getSkin().getStrikeoutImage();
 	}
 
 	public SavingsButton getSavingsButton() {
