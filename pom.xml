@@ -222,5 +222,6 @@
 		</pluginManagement>
 	</build>
 	<artifactId>ewt</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.3b</version>
+	<description>120x600 US Deals/Dynamic Ad widget only - download size greatly reduced.</description>
 </project>
