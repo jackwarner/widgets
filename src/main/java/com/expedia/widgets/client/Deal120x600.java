@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.expedia.widgets.client.dynamicad.LineOfBusiness;
+import com.google.inject.Inject;
 
 
 public class Deal120x600 extends Deal {
@@ -11,6 +12,7 @@ public class Deal120x600 extends Deal {
 	private final int WIDTH = 130;
 	private final int HEIGHT = 535;
 
+	@Inject
 	public Deal120x600(ArrayList<LineOfBusiness> lobs, boolean isHottestDeal,
 			DealsWidgetConfiguration config) {
 		super(lobs, isHottestDeal, config);

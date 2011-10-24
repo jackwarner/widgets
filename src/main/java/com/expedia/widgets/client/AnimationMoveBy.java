@@ -3,6 +3,7 @@ package com.expedia.widgets.client;
 import com.google.gwt.animation.client.Animation;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.Inject;
 
 public class AnimationMoveBy extends Animation {
 	private AbsolutePanel parent;
@@ -10,6 +11,7 @@ public class AnimationMoveBy extends Animation {
 	int startLeftCoordinate = 0;
 	int finalLeftCoordinate = 0;
 
+	@Inject
 	public AnimationMoveBy(AbsolutePanel parent, Widget toAnimation,
 			int startingLeftPosition, int finalLeftCoordinate) {
 		this.finalLeftCoordinate = finalLeftCoordinate;

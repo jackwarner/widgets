@@ -36,43 +36,43 @@ public final class GoogleAnalytics {
 	private static String getApiZeroResultsAction = "ApiZeroResults";
 
 	public static void trackOfferClick(String offerUrl) {
-		GoogleAnalytics.trackEvent(getWidgetCategory(), getOfferAction(),
-				offerUrl);
+		//GoogleAnalytics.trackEvent(getWidgetCategory(), getOfferAction(),
+		//		offerUrl);
 	}
 
 	public static void trackDotClick(String destination) {
-		GoogleAnalytics.trackEvent(getWidgetCategory(), getDotAction,
-				destination);
+		//GoogleAnalytics.trackEvent(getWidgetCategory(), getDotAction,
+		//		destination);
 	}
 
 	public static void trackSearchClick(String searchParameters) {
-		GoogleAnalytics.trackEvent(getWidgetCategory(), getSearchAction,
-				searchParameters);
+		//GoogleAnalytics.trackEvent(getWidgetCategory(), getSearchAction,
+		//		searchParameters);
 	}
 
 	public static void trackChangeCity(String searchParameters) {
-		GoogleAnalytics.trackEvent(getWidgetCategory(), getChangeCityAction,
-				searchParameters);
+		//GoogleAnalytics.trackEvent(getWidgetCategory(), getChangeCityAction,
+		//		searchParameters);
 	}
 
 	public static void trackMouseOverOffer(String offerUrl) {
-		GoogleAnalytics.trackEvent(getWidgetCategory(),
-				getMouseOverOfferAction, offerUrl);
+		//GoogleAnalytics.trackEvent(getWidgetCategory(),
+		//		getMouseOverOfferAction, offerUrl);
 	}
 
 	public static void trackMoreOffers(String offerUrl) {
-		GoogleAnalytics.trackEvent(getWidgetCategory(), getMoreOfferAction,
-				offerUrl);
+		//GoogleAnalytics.trackEvent(getWidgetCategory(), getMoreOfferAction,
+		//		offerUrl);
 	}
 
 	public static void trackApiFailure(String call) {
-		GoogleAnalytics.trackEvent(getWidgetCategory(), getApiFailureAction,
-				call);
+		//GoogleAnalytics.trackEvent(getWidgetCategory(), getApiFailureAction,
+		//		call);
 	}
 
 	public static void trackApiZeroResults() {
-		GoogleAnalytics.trackEvent(getWidgetCategory(),
-				getApiZeroResultsAction, "");
+		//GoogleAnalytics.trackEvent(getWidgetCategory(),
+		//		getApiZeroResultsAction, "");
 
 	}
 }

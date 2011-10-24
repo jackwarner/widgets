@@ -19,7 +19,7 @@ public class SearchFormSimple extends SearchForm {
 				searchCity = destinations.get(cityList.getSelectedIndex());
 
 				searchFormValues.set(searchCity);
-				GoogleAnalytics.trackChangeCity(searchCity.getName());
+				//GoogleAnalytics.trackChangeCity(searchCity.getName());
 				handlerManager.fireEvent(new SearchEvent());
 			}
 

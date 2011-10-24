@@ -20,6 +20,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -51,11 +52,6 @@ public class DealsWidget120x600 extends Composite {
 			System.err.println("problem creating deals widget");
 			e.printStackTrace();
 		}
-		
-		//WidgetLayoutSummerSkinDefault120x600 layoutSkin = new WidgetLayoutSummerSkinDefault120x600();
-		//layout = new WidgetLayoutSummer120x600(
-	//			config.getLayoutString(), layoutSkin);
-		
 		
 		
 	}
@@ -158,7 +154,6 @@ public class DealsWidget120x600 extends Composite {
 
 						@Override
 						public void onSearch() {
-
 							searchFormUserValues.set(dealView.getSearchCity(),
 									searchFormUserValues.getDate(),
 									searchFormUserValues.getNights());
@@ -216,9 +211,7 @@ public class DealsWidget120x600 extends Composite {
 		reloadData(searchFormUserValues.getCity(),
 				searchFormUserValues.getDate(),
 				searchFormUserValues.getNights(), true);
-		// api.getData(searchFormUserValues.getCity(),
-		// searchFormUserValues.getDate(), searchFormUserValues.getNights(),
-		// true);
+	
 
 	}
 	private void reloadData(Destination city, Date date, int nights,
@@ -233,11 +226,70 @@ public class DealsWidget120x600 extends Composite {
 	private void hideLoadingPanel() {
 		loadingPanel.setVisible(false);
 	//	panel.remove(0);
-		//layout.addHeaderLogo(panel, getExpediaUrlWithTracking());
-	//	layout.setBackground(panel);
+		addHeaderLogo(panel, getExpediaUrlWithTracking());
+		//layout.setBackground(panel);
 
 	}
 
+	public void addHeaderLogo(AbsolutePanel panel, final String tracking) {
+		
+			try {
+				FocusPanel headerLogo = new FocusPanel();
+				headerLogo.add(new Image(resources.expediaLogo()));
+				//panel.add(headerLogo, 16, 16);
+				headerLogo.addStyleName("clickable");
+				headerLogo.addClickHandler(new ClickHandler() {
+
+					@Override
+					public void onClick(ClickEvent event) {
+
+						Utility.OpenLink(tracking, true);
+
+					}
+
+				});
+				
+				
+				
+				AbsolutePanel main = new AbsolutePanel();
+				HorizontalPanel p = new HorizontalPanel();
+				HorizontalPanel text = new HorizontalPanel();
+
+				p.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
+				p.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+				text.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
+				text.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
+
+				main.setPixelSize(160, 45);
+				p.setWidth("120px");
+				text.setWidth("120px");
+				Label todaysDeals = new Label("Today's Deals");
+				// TODO: i18n above
+				todaysDeals.addStyleName("todaysDeals");
+				text.add(todaysDeals);
+				p.add(new Image(resources.expediaLogo()));
+				main.add(p, 0, 4);
+				main.add(text, 0, 26);
+				FocusPanel focus = new FocusPanel();
+				focus.addClickHandler(new ClickHandler() {
+
+					@Override
+					public void onClick(ClickEvent event) {
+						Utility.OpenLink(tracking, true);
+						
+					}
+					
+				});
+				focus.add(main);
+				panel.add(main,0,15);
+				
+				
+			} catch (Exception e) {
+				System.err.println("Skin missing required header image.");
+			}
+		}
+	
+	
 	private String getExpediaUrlWithTracking() {
 
 		String trackingRedirect = TrackingConstants.TRACKING_REDIRECT + "?"

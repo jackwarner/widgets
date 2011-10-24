@@ -3,6 +3,7 @@ package com.expedia.widgets.client;
 import java.util.ArrayList;
 
 import com.google.gwt.user.client.Timer;
+import com.google.inject.Inject;
 
 public class Choreographer {
 	private int offerToAnimate = 0;
@@ -13,7 +14,8 @@ public class Choreographer {
 	boolean ignoreAnimationRequest = false;
 
 	private int numberOfOffers = 0;
-
+	
+	@Inject
 	public Choreographer(ArrayList<Offer> offers, Configuration config) {
 		myOffers.addAll(offers);
 		timer = new Timer() {

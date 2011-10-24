@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.google.inject.Inject;
+
 
 abstract public class Configuration {
 	private static final String CLICKTAG_PARAMETER = "clicktag";
@@ -35,6 +37,7 @@ abstract public class Configuration {
 	final private static TrackingConstants tracking = new TrackingConstants();
 	protected HashMap<String, List<String>> mutableMap = new HashMap<String, List<String>>();
 
+	@Inject
 	public Configuration(Map<String, List<String>> parameters)
 			throws WidgetNameException {
 

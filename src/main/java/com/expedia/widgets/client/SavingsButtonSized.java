@@ -3,10 +3,11 @@ package com.expedia.widgets.client;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.inject.Inject;
 
 public class SavingsButtonSized extends
 		SavingsButtonMouseoverToggleTextAndFlashlightAnimated {
-
+	@Inject
 	public SavingsButtonSized(int savingsPercentage, int width, int height,
 			DealsWidgetSkin skin) {
 		super(savingsPercentage, skin);

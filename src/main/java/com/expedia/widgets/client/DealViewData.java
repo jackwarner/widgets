@@ -2,6 +2,8 @@ package com.expedia.widgets.client;
 
 import java.util.ArrayList;
 
+import com.google.inject.Inject;
+
 
 
 /**
@@ -16,7 +18,8 @@ public class DealViewData {
 	final private ArrayList<Deal> deals = new ArrayList<Deal>();
 	final private DealsWidgetConfiguration config;
 	final private SearchFormValues searchFormUserValues;
-
+	
+	@Inject
 	public DealViewData(ArrayList<Deal> deals, DealsWidgetConfiguration config,
 			SearchFormValues searchFormUserValues) {
 		this.deals.addAll(deals);

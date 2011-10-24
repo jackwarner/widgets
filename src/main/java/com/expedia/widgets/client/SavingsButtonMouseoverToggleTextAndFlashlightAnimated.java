@@ -1,12 +1,13 @@
 package com.expedia.widgets.client;
 
 import com.google.gwt.user.client.ui.Image;
+import com.google.inject.Inject;
 
 public class SavingsButtonMouseoverToggleTextAndFlashlightAnimated extends
 		SavingsButtonAnimatedToggleText {
 	private Image flashLight;
 	AnimationMoveBy animationObject;
-
+	@Inject
 	public SavingsButtonMouseoverToggleTextAndFlashlightAnimated(
 			int savingsPercentage, DealsWidgetSkin skin) {
 		super(savingsPercentage, skin);

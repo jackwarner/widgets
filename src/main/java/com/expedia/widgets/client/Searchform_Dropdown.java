@@ -7,6 +7,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.inject.Inject;
 
 public class Searchform_Dropdown extends Composite {
 
@@ -15,7 +16,7 @@ public class Searchform_Dropdown extends Composite {
 	ListBox listBox;
 
 	
-
+	@Inject
 	public Searchform_Dropdown(String labelText,
 			ArrayList<SelectionData> array, int width, int height) {
 		dropdownPanel = new VerticalPanel();

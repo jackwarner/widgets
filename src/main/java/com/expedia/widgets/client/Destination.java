@@ -1,10 +1,13 @@
 package com.expedia.widgets.client;
 
+import com.google.inject.Inject;
+
 public class Destination {
 	private final String name;
 	private final String value;
 	private final boolean enough;
 
+	@Inject
 	public Destination(String name, String value, boolean enough) {
 		this.name = name;
 		this.value = value;

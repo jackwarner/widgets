@@ -7,6 +7,7 @@ import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.Inject;
 
 
 /**
@@ -35,7 +36,7 @@ abstract public class DealView extends Composite {
 	protected final ArrayList<Widget> deals = new ArrayList<Widget>();
 	
 	protected HandlerManager handlerManager = new HandlerManager(this);
-
+	@Inject
 	public DealView(final ArrayList<Deal> deals, int myWidth, int myHeight
 			) {
 

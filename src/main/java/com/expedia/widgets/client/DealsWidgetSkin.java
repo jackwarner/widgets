@@ -1,6 +1,5 @@
 package com.expedia.widgets.client;
 
-import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -9,7 +8,7 @@ import com.google.gwt.user.client.ui.Widget;
 public interface DealsWidgetSkin extends WidgetSkin {
 	public void setLoaderPanel(VerticalPanel loadingPanel);
 
-	public String getNavigationMarkers();
+	
 
 	public Image getStrikeoutImage();
 

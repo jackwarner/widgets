@@ -15,6 +15,7 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.datepicker.client.DateBox;
+import com.google.inject.Inject;
 
 /**
  * DealView is responsible for animating multiple hotel deals for a single city.
@@ -47,6 +48,7 @@ public class DealViewSlider extends DealView {
 	private Timer timer;
 	private Deal backgroundDeal; // used for looping
 
+	@Inject
 	public DealViewSlider(DealViewData data) {
 		super(data.getDeals(), data.getWidth(), data.getHeight());
 
@@ -65,7 +67,7 @@ public class DealViewSlider extends DealView {
 		} else {
 			// set a background deal that will always be there -
 			// this creates the impression of looping
-			panel.setPixelSize(110,600);
+			panel.setPixelSize(115, 600);
 			// Debug.print("Deals size is " + this.deals.size());
 			backgroundDeal = this.deals.get(deals.size() - 1);
 			panel.add(backgroundDeal, 0, 0);
@@ -169,7 +171,7 @@ public class DealViewSlider extends DealView {
 		}
 		bigPanel.setPixelSize(110, 600);
 		bigPanel.add(panel, 0, 80);
-		bigPanel.add(getNavigationMarkers(), 0, 570);
+		bigPanel.add(getNavigationMarkers(), 0, 565);
 
 		miniSearch = new SearchFormSimple(userFormValues, 92);
 		miniSearch.addSearchHandler(new SearchListener() {
@@ -177,11 +179,11 @@ public class DealViewSlider extends DealView {
 			public void onMiniSearch() {
 				timer.cancel();
 				// data.getConfi
-				myData.getConfig().setAnimated(false);
+				// myData.getConfig().setAnimated(false);
 				handlerManager.fireEvent(new DealsSearchEvent());
 			}
 		});
-		bigPanel.add(miniSearch, 9, 36);
+		bigPanel.add(miniSearch, 7, 56);
 
 		initWidget(bigPanel);
 
@@ -200,26 +202,25 @@ public class DealViewSlider extends DealView {
 		navigationPanel
 				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		navigationPanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
-		navigationPanel.addStyleName(myData.getConfig().getSkin()
-				.getNavigationMarkers());
-		// destinations.add(0, "Hottest Deals");
-
-		// leftSpace.setPixelSize(padWidth, 1);
-		// AbsolutePanel rightSpace = new AbsolutePanel();
-		// rightSpace.setPixelSize(padWidth, 1);
+		
+		AbsolutePanel leftSpace = new AbsolutePanel();
+		leftSpace.setPixelSize(25, 1);
+		AbsolutePanel rightSpace = new AbsolutePanel();
+		rightSpace.setPixelSize(25, 1);
 
 		leftArrow = new ArrowMarker(0, false, null);
 		leftArrow.getImage().addClickHandler(new ClickHandler() {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				GoogleAnalytics.trackDotClick(leftArrow.getDestinationName());
+				// GoogleAnalytics.trackDotClick(leftArrow.getDestinationName());
 				// resetWidgetPositions();
 
 				goToDealAtPosition(leftArrow.getPosition());
 			}
 
 		});
+		navigationPanel.add(leftSpace);
 		navigationPanel.add(leftArrow);
 
 		rightArrow = new ArrowMarker(0, true, null);
@@ -227,18 +228,18 @@ public class DealViewSlider extends DealView {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				GoogleAnalytics.trackDotClick(rightArrow.getDestinationName());
+				// GoogleAnalytics.trackDotClick(rightArrow.getDestinationName());
 				// resetWidgetPositions();
 
 				goToDealAtPosition(rightArrow.getPosition());
 			}
 
 		});
+
 		navigationPanel.add(rightArrow);
 		updateNavigationMarker(0, true);
-
-		// navigationPanel.add(rightSpace);
-
+		navigationPanel.add(rightSpace);
+		
 		return navigationPanel;
 	}
 

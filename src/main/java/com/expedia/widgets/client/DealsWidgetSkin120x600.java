@@ -22,10 +22,6 @@ public class DealsWidgetSkin120x600 implements DealsWidgetSkin {
 		loadingPanel.add(new Image(resources.loader()));
 	}
 
-	@Override
-	public String getNavigationMarkers() {
-		return "navigationMarkers";
-	}
 
 	/** The parent style from which all other style inherit **/
 	@Override

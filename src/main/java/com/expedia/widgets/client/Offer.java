@@ -10,6 +10,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
+import com.google.inject.Inject;
 
 
 
@@ -33,10 +34,10 @@ public abstract class Offer extends Composite implements ClickHandler {
 	DealsWidgetConfiguration config;
 
 	protected NumberFormat formatter = NumberFormat.getFormat("###");
+	@Inject
+	public Offer(final Hotel lob2, DealsWidgetConfiguration config) {
 
-	public Offer(final Hotel lob, DealsWidgetConfiguration config) {
-
-		this.lob = lob;
+		this.lob = lob2;
 		this.openInNewWindow = config.getOpenLinksInNewWindow();
 		this.stars = new StarsFlashlight(config.getSkin(), this.lob.getStarRating().doubleValue(), true);
 		// this.dealImage = this.lob.getImage(122,46);
@@ -73,14 +74,14 @@ public abstract class Offer extends Composite implements ClickHandler {
 			 * It suggests we got their attention, and then we can see how often
 			 * they actually click a deal.
 			 */
-			dealPanel.addMouseOverHandler(new MouseOverHandler() {
+			/*dealPanel.addMouseOverHandler(new MouseOverHandler() {
 
 				@Override
 				public void onMouseOver(MouseOverEvent event) {
 					GoogleAnalytics.trackMouseOverOffer(lob.getTracking());
 				}
 
-			});
+			});*/
 		} catch (Exception e) {
 			System.err.println("Problem constructing Deal Offer.");
 		}

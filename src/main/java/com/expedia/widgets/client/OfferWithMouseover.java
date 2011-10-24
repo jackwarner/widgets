@@ -6,6 +6,7 @@ import com.google.gwt.event.dom.client.MouseOverEvent;
 import com.google.gwt.event.dom.client.MouseOverHandler;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.inject.Inject;
 
 
 abstract public class OfferWithMouseover extends Offer {
@@ -14,7 +15,7 @@ abstract public class OfferWithMouseover extends Offer {
 	// private static final double FADE_DURATION = .3;
 	// private static final double APPEAR_DURATION = .1;
 	private AbsolutePanel dealGray = new AbsolutePanel();
-
+	@Inject
 	public OfferWithMouseover(Hotel lob, final DealsWidgetConfiguration config) {
 		super(lob, config);
 

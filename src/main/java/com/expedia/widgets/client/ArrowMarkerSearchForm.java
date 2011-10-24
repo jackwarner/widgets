@@ -3,6 +3,7 @@ package com.expedia.widgets.client;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
+import com.google.inject.Inject;
 
 abstract public class ArrowMarkerSearchForm extends Composite {
 
@@ -13,7 +14,8 @@ abstract public class ArrowMarkerSearchForm extends Composite {
 	private AbsolutePanel panel = new AbsolutePanel();
 
 	final private Image arrow;
-
+	
+	@Inject
 	public ArrowMarkerSearchForm(int position, boolean isRight, String title,
 			boolean hasArrow, LOBEnum lob, Image selectorButtonRight, Image selectorButtonRightNoArrow, Image selectorButtonLeft, Image selectorButtonLeftNoArrow) {
 		this.lobEnum = lob;

@@ -4,6 +4,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.datepicker.client.DateBox;
+import com.google.inject.Inject;
 
 public class Searchform_DateInput extends Composite {
 
@@ -12,7 +13,7 @@ public class Searchform_DateInput extends Composite {
 	public Label label;
 
 	
-
+	@Inject
 	public Searchform_DateInput(
 			String labelText, DateBox dateBox, int width, int height) {
 		this.dateBox = dateBox;

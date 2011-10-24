@@ -4,6 +4,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
+import com.google.inject.Inject;
 
 
 
@@ -19,6 +20,7 @@ public class ArrowMarker extends Composite {
 	
 	final private Image arrow;
 
+	@Inject
 	public ArrowMarker(int position, boolean isRight, String title) {
 
 		this.position = position;

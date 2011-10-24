@@ -1,5 +1,7 @@
 package com.expedia.widgets.client;
 
+import com.google.inject.Inject;
+
 
 /**
  * Technically, this should probably be renamed to OfferWithAnimation and Mous
@@ -8,7 +10,7 @@ package com.expedia.widgets.client;
  * 
  */
 abstract public class OfferWithAnimation extends OfferWithMouseover {
-
+	@Inject
 	public OfferWithAnimation(Hotel lob, DealsWidgetConfiguration config) {
 		super(lob, config);
 

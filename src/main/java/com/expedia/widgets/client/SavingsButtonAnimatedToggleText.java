@@ -1,5 +1,7 @@
 package com.expedia.widgets.client;
 
+import com.google.inject.Inject;
+
 
 
 public class SavingsButtonAnimatedToggleText extends SavingsButtonMouseover {
@@ -7,6 +9,7 @@ public class SavingsButtonAnimatedToggleText extends SavingsButtonMouseover {
 	boolean isMouseOver = false;
 
 	// private boolean detectHasStopped = true;
+	@Inject
 	public SavingsButtonAnimatedToggleText(int savingsPercentage,
 			DealsWidgetSkin skin) {
 		super(savingsPercentage, skin);

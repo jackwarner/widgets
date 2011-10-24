@@ -47,7 +47,7 @@ abstract public class SearchForm extends Composite {
 		destinations.addAll(Destinations.getDestinations());
 		destinations.remove(0);
 		initDestinationDropDown();
-		//cityList.setStyleName(layout.getSkin().getDropDown());
+		cityList.setStyleName("miniSearch");
 		//cityList.setWidth(layout.getSkin().getDestinationWidth());
 		initNightsDropDown();
 		initFormValues();

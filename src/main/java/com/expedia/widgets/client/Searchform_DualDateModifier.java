@@ -8,6 +8,7 @@ import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.user.datepicker.client.DateBox;
 import com.google.gwt.user.datepicker.client.DatePicker;
+import com.google.inject.Inject;
 
 
 public class Searchform_DualDateModifier {
@@ -19,7 +20,8 @@ public class Searchform_DualDateModifier {
 	DatePicker pickerTomorrow;
 	public DateBox checkoutDate;
 	public DateBox checkinDate;
-
+	
+	@Inject
 	public Searchform_DualDateModifier(
 			String labelTextOne, String labelTextTwo, int width, int height) {
 	

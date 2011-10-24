@@ -2,6 +2,7 @@ package com.expedia.widgets.client;
 
 import com.google.gwt.event.dom.client.FocusEvent;
 import com.google.gwt.event.dom.client.FocusHandler;
+import com.google.inject.Inject;
 
 
 /**
@@ -25,6 +26,7 @@ public class LocationDestinationSuggestion extends ExpediaSuggestion {
 	 * @param config
 	 * @param defaultText
 	 */
+	@Inject
 	public LocationDestinationSuggestion(final String defaultSearch,
 			boolean hasCustomSearch) {
 	

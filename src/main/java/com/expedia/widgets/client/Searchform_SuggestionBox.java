@@ -19,6 +19,7 @@ public class Searchform_SuggestionBox extends Composite {
 	 * @param labelText
 	 * @param suggestBox
 	 */
+	@Inject
 	public Searchform_SuggestionBox(
 			String labelText, ExpediaSuggestion suggestBox, int numberOfResultsToReturn) {
 		this(labelText, suggestBox, 100,

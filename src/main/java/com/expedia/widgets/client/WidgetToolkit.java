@@ -34,7 +34,7 @@ public class WidgetToolkit implements EntryPoint {
 	 */
 	public void onModuleLoad() {
 
-		String sizeString = Window.Location.getParameter("size");
+		/*String sizeString = Window.Location.getParameter("size");
 
 		if (Window.Location.getParameter("widgetname").equals("searchform")) {
 
@@ -80,10 +80,42 @@ public class WidgetToolkit implements EntryPoint {
 				RootPanel.get().add(test, 0, 0);
 			}
 		}
-		else {
-			DealsWidget120x600 test = injector.getDealsWidget120x600();
-			RootPanel.get().add(test, 0, 0);
-		}
+		else {*/
+		GWT.runAsync(WidgetToolkitLoad.class, new RunAsyncCallback() {
+			
+
+			@Override
+			public void onFailure(Throwable reason) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onSuccess() {
+				GWT.runAsync(WidgetToolkitContent.class,
+						new RunAsyncCallback() {
+
+							@Override
+							public void onFailure(Throwable reason) {
+								// TODO Auto-generated method stub
+
+							}
+
+							@Override
+							public void onSuccess() {
+								// TODO Auto-generated method stub
+
+								// TODO Auto-generated method stub
+								DealsWidget120x600 test1 = injector.getDealsWidget120x600();
+								RootPanel.get().add(test1, 0, 0);
+							}
+
+						});
+				
+			}
+			
+		});
+		//}
 
 	}
 }

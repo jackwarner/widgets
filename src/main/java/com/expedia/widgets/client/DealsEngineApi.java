@@ -12,6 +12,7 @@ import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.i18n.client.DateTimeFormat;
 import com.google.gwt.jsonp.client.JsonpRequestBuilder;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.inject.Inject;
 
 
 
@@ -53,6 +54,7 @@ public class DealsEngineApi {
 	 * @param lowerStar
 	 * @param higherStar
 	 */
+	@Inject
 	public DealsEngineApi(Integer numResultsPerDestination,
 			int numberofDestinations, String cities, Double lowerStar,
 			Double higherStar, String tracking) {

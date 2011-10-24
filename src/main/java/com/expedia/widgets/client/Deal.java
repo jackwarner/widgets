@@ -10,6 +10,7 @@ import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Label;
+import com.google.inject.Inject;
 
 
 public class Deal extends Composite {
@@ -27,7 +28,7 @@ public class Deal extends Composite {
 	// TODO: make this private and access it from sub-classes only through
 	// getters
 	protected AbsolutePanel dealPanel = new AbsolutePanel();
-
+	@Inject
 	public Deal(ArrayList<LineOfBusiness> lobs, boolean isHottestDeal,
 			DealsWidgetConfiguration config) {
 

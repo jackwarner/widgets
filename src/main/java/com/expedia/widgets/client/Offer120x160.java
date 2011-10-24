@@ -4,6 +4,7 @@ import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.inject.Inject;
 
 
 
@@ -14,7 +15,7 @@ public class Offer120x160 extends OfferWithAnimation {
 	private static final int HEIGHT = 160;
 	private final int LEFT_PAD = 5;
 	private final int TOP_PAD = 5;
-
+	@Inject
 	public Offer120x160(Hotel lob, DealsWidgetConfiguration config) {
 		super(lob, config);
 		AbsolutePanel offer = new AbsolutePanel();

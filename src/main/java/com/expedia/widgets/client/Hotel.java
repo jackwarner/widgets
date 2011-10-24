@@ -2,6 +2,7 @@ package com.expedia.widgets.client;
 
 import com.expedia.widgets.client.dynamicad.LineOfBusiness;
 import com.google.gwt.core.client.GWT;
+import com.google.inject.Inject;
 
 
 public class Hotel implements LineOfBusiness {
@@ -13,10 +14,11 @@ public class Hotel implements LineOfBusiness {
 	private String emptyCityName;
 	private WidgetMessages messages = GWT.create(WidgetMessages.class);
 
+	@Inject
 	public Hotel(String tracking) {
 		this.tracking = tracking;
 	}
-
+	@Inject
 	public Hotel(boolean isEmptyHotel, String name) {
 		this.isEmptyHotel = isEmptyHotel;
 		emptyCityName = name;
@@ -90,7 +92,13 @@ public class Hotel implements LineOfBusiness {
 	}
 
 	public String getProductLink() {
-		return hotel.getProductLink();
+		if (hotel.getProductLink() != null) {
+			return hotel.getProductLink();
+		}
+		else {
+			System.err.println("Null deeplink for Hotel Offer!");
+			return "";
+		}
 	}
 
 	/**

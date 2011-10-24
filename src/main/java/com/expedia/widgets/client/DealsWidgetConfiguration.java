@@ -4,10 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.gwt.user.client.Window;
+import com.google.inject.Inject;
 
 
 public class DealsWidgetConfiguration extends Configuration {
-	private static DealsWidgetConfiguration instance = null;
 	private static final String MAX_STAR_EXPEDIA_DECIDES = "3.5";
 	private static final String MIN_STAR_EXPEDIA_DECIDES = "3.0";
 
@@ -19,7 +19,8 @@ public class DealsWidgetConfiguration extends Configuration {
 	private Double minRating;
 	private Double maxRating;
 
-	protected DealsWidgetConfiguration(Map<String, List<String>> parameters)
+	@Inject
+	public DealsWidgetConfiguration(Map<String, List<String>> parameters)
 			throws WidgetNameException {
 		super(parameters);
 		destinations = Window.Location.getParameter(DESTINATION_PARAMETER);
@@ -74,19 +75,7 @@ public class DealsWidgetConfiguration extends Configuration {
 		widgetName = "deals";
 	}
 
-	public static DealsWidgetConfiguration getInstance(
-			Map<String, List<String>> configData) {
-		if (instance == null) {
-			try {
-				instance = new DealsWidgetConfiguration(configData);
-			} catch (WidgetNameException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		return instance;
-
-	}
+	
 
 
 

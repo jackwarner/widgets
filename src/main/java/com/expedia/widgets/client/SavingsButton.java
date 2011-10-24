@@ -6,6 +6,7 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FocusPanel;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
+import com.google.inject.Inject;
 
 
 
@@ -21,7 +22,7 @@ abstract public class SavingsButton extends Composite {
 	AbsolutePanel bigPanel = new AbsolutePanel();
 	private AbsolutePanel panel = new AbsolutePanel();
 	AbsolutePanel overlayPanel = new AbsolutePanel();
-
+	@Inject
 	public SavingsButton(final int savingsPercentage, final DealsWidgetSkin skin) {
 		
 				bookOut = skin.getBookNowImage();

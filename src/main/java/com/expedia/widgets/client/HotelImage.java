@@ -4,11 +4,12 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.ui.AbsolutePanel;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Image;
+import com.google.inject.Inject;
 
 
 public class HotelImage extends Composite {
 	private HotelResources resources = GWT.create(HotelResources.class);
-
+	@Inject
 	public HotelImage(String url, int width, int height) {
 		AbsolutePanel panel = new AbsolutePanel();
 		Image.prefetch(url);
