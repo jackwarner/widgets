@@ -25,6 +25,7 @@ import com.google.inject.Inject;
  */
 public class DealViewSlider extends DealView {
 
+	private static final int PANEL_INNER_WIDTH = 100;
 	final private HandlerManager handlerManager = new HandlerManager(this);
 	private AbsolutePanel bigPanel = new AbsolutePanel();
 	private AbsolutePanel panel = new AbsolutePanel();
@@ -67,7 +68,7 @@ public class DealViewSlider extends DealView {
 		} else {
 			// set a background deal that will always be there -
 			// this creates the impression of looping
-			panel.setPixelSize(100, 600);
+			panel.setPixelSize(PANEL_INNER_WIDTH, 600);
 			// Debug.print("Deals size is " + this.deals.size());
 			backgroundDeal = this.deals.get(deals.size() - 1);
 			panel.add(backgroundDeal, 0, 0);
@@ -169,7 +170,7 @@ public class DealViewSlider extends DealView {
 			}
 
 		}
-		bigPanel.setPixelSize(100, 600);
+		bigPanel.setPixelSize(PANEL_INNER_WIDTH, 600);
 		bigPanel.add(panel, 0, 80);
 		bigPanel.add(getNavigationMarkers(), 0, 565);
 
@@ -183,7 +184,7 @@ public class DealViewSlider extends DealView {
 				handlerManager.fireEvent(new DealsSearchEvent());
 			}
 		});
-		bigPanel.add(miniSearch, 7, 56);
+		bigPanel.add(miniSearch, 3, 56);
 
 		initWidget(bigPanel);
 
@@ -198,15 +199,15 @@ public class DealViewSlider extends DealView {
 
 		HorizontalPanel navigationPanel = new HorizontalPanel();
 
-		navigationPanel.setPixelSize(110, 22);
+		navigationPanel.setPixelSize(PANEL_INNER_WIDTH, 22);
 		navigationPanel
 				.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_CENTER);
 		navigationPanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
 		
 		AbsolutePanel leftSpace = new AbsolutePanel();
-		leftSpace.setPixelSize(25, 1);
+		leftSpace.setPixelSize(17, 1);
 		AbsolutePanel rightSpace = new AbsolutePanel();
-		rightSpace.setPixelSize(25, 1);
+		rightSpace.setPixelSize(15, 1);
 
 		leftArrow = new ArrowMarker(0, false, null);
 		leftArrow.getImage().addClickHandler(new ClickHandler() {
