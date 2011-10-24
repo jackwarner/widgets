@@ -11,9 +11,9 @@ import com.google.inject.Inject;
 public class Offer120x160 extends OfferWithAnimation {
 
 	private static final int LABEL_WIDTH = 94;
-	private static final int WIDTH = 102;
+	private static final int WIDTH = 100;
 	private static final int HEIGHT = 160;
-	private final int LEFT_PAD = 5;
+	private final int LEFT_PAD = 3;
 	private final int TOP_PAD = 5;
 	@Inject
 	public Offer120x160(Hotel lob, DealsWidgetConfiguration config) {

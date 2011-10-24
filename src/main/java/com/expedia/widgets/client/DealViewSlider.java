@@ -67,7 +67,7 @@ public class DealViewSlider extends DealView {
 		} else {
 			// set a background deal that will always be there -
 			// this creates the impression of looping
-			panel.setPixelSize(115, 600);
+			panel.setPixelSize(100, 600);
 			// Debug.print("Deals size is " + this.deals.size());
 			backgroundDeal = this.deals.get(deals.size() - 1);
 			panel.add(backgroundDeal, 0, 0);
@@ -169,7 +169,7 @@ public class DealViewSlider extends DealView {
 			}
 
 		}
-		bigPanel.setPixelSize(110, 600);
+		bigPanel.setPixelSize(100, 600);
 		bigPanel.add(panel, 0, 80);
 		bigPanel.add(getNavigationMarkers(), 0, 565);
 

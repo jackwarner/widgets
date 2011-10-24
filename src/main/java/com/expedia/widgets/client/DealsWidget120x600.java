@@ -174,7 +174,7 @@ public class DealsWidget120x600 extends Composite {
 				}
 				try {
 					hideLoadingPanel();
-					panel.add(dealView, 7,
+					panel.add(dealView, 10,
 							0);
 				} catch (Exception e) {
 
