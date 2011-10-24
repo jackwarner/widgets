@@ -27,10 +27,12 @@
    <!-- And initial load sequence - see GWT docs for explanation http://code.google.com/webtoolkit/doc/latest/DevGuideCodeSplitting.html#sequence  -->
   <extend-configuration-property name="compiler.splitpoint.initial.sequence" value="com.expedia.widgets.client.WidgetToolkitLoad" />
   <extend-configuration-property name="compiler.splitpoint.initial.sequence" value="com.expedia.widgets.client.WidgetToolkitContent" />
-  <extend-property name="locale" values="en_US,fr_CA"/>
+  <!--  <extend-property name="locale" values="en_US,fr_CA"/>-->
   
   <!-- Supported locales -->
-  <inherits name="com.google.gwt.i18n.I18N"/><!--
+  <!-- <inherits name="com.google.gwt.i18n.I18N"/>
+   -->
+   <!--
    <extend-property name="locale" values="en"/>
    <extend-property name="locale" values="fr"/>-->
   <!-- Uncomment if you are enabling server side deobfuscation of StackTraces
